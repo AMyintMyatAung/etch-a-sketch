@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- tailwind cdn -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            gridTemplateColumns: {
+              16: "repeat(16, 1fr)",
+              32: "repeat(32, 1fr)",
+              64: "repeat(64, 1fr)",
+            },
+            gridTemplateRows: {
+              16: "repeat(16, 1fr)",
+              32: "repeat(32, 1fr)",
+              64: "repeat(64, 1fr)",
+            },
+          },
+        },
+      };
+    </script>
+    <title>Etch-A-Sketch</title>
+    <!-- Jquery cdn -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.js"
+      integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1 class="text-2xl font-bold p-3">Etch-A-Sketch</h1>
+    </header>
+    <main
+      class="p-5 flex flex-col items-center gap-5 sm:flex-row-reverse sm:justify-center"
+    >
+      <div
+        id="grid-container"
+        class="flex min-w-[320px] min-h-[320px] justify-center grid"
+        style="user-select: none"
+      ></div>
+      <div
+        class="flex flex-row w-full gap-5 justify-center sm:flex-col sm:w-auto sm:gap-10"
+      >
+        <select name="grid-size" id="grid-size" class="px-5 py-2 max-w-[120px]">
+          <option value="16" selected>16x16</option>
+          <option value="32">32x32</option>
+          <option value="64">64x64</option>
+        </select>
+        <button
+          id="clear"
+          class="px-4 py-2 bg-red-400 hover:bg-red-500 sm:max-w-[120px]"
+        >
+          Clear
+        </button>
+        <button
+          id="erase"
+          class="px-4 py-2 bg-amber-400 hover:bg-amber-500 sm:max-w-[120px]"
+        >
+          Color Mode
+        </button>
+        <button
+          id="color"
+          class="px-4 py-2 bg-amber-400 hover:bg-amber-500 sm:max-w-[120px] hidden"
+        >
+          Erase Mode
+        </button>
+      </div>
+    </main>
+    <footer></footer>
+  </body>
+</html>
